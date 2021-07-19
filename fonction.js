@@ -1,47 +1,26 @@
 // Burger
-function toggleMenu(){
-    const navbar = document.querySelector('.navbar');
-    const burger = document.querySelector('.burger');
-    burger.addEventListener('click', () => {
-        navbar.classList.toggle('show-nav');
+
+    const navbar = document.querySelector(".navbar");
+    const burger = document.querySelector(".burger");
+    burger.addEventListener("click", () => {
+        navbar.classList.toggle("show-nav");
     })
 
-}
+
 // Pop-up
-toggleMenu();
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('fondsombre')
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const menu = document.querySelector(button.dataset.modalTarget)
-    openModal(menu)
+const openModalButtons = document.querySelector('[data-modal-target]');
+const closeModalButtons = document.querySelector('[data-close-button]');
+const overlay = document.querySelector('#fondsombre');
+
+  openModalButtons.addEventListener('click', () => {
+    let target = openModalButtons.dataset.modalTarget;
+    const menu = document.querySelector(target);
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active")
   })
-})
-
-overlay.addEventListener('click', () => {
-  const menus = document.querySelectorAll('.menu.active')
-  modals.forEach(menu => {
-    closeModal(menu)
+  closeModalButtons.addEventListener('click', () => {
+    const menu = closeModalButtons.closest('.menu')
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active")
   })
-})
-
-closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const menu = button.closest('.menu')
-    closeModal(menu)
-  })
-})
-
-function openModal(menu) {
-  if (menu == null) return
-  menu.classList.add('active')
-  overlay.classList.add('active')
-}
-
-function closeModal(menu) {
-  if (menu == null) return
-  menu.classList.remove('active')
-  overlay.classList.remove('active')
-}

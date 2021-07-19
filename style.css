@@ -5,13 +5,19 @@
 a {
     text-decoration: none;
 }
-
+.navbar{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
 .navbar-links {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 29px;
+    top: 50px;
     right: 0;
     color:rgb(255, 255, 255);
     background-color: black;
@@ -43,18 +49,18 @@ a {
 
 .burger {
     display: block;
-    position: absolute;
+    
     padding: 0;
     width: 45px;
     height: 45px;
-    top: 0px;
-    right: 10px;
+
     border: none;
     background: transparent;
     cursor: pointer;
 }
 
 .barre {
+  position: relative;
     display: block;
     width: 45px;
     height: 4px;
@@ -97,7 +103,7 @@ a {
 .navbar-titre {
     font-size: 2rem;
     color: white;
-    background-color: black;
+    
 }
 /* Pop-up */
 *, *::after, *::before {
